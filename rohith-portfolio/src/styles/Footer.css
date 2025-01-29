@@ -1,0 +1,19 @@
+.footer {
+  padding: 2rem;
+  border-top: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: #00FF00;
+  font-family: monospace;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.footer-content p {
+  margin: 0;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+} 

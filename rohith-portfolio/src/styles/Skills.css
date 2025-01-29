@@ -1,0 +1,229 @@
+.skills-section {
+  padding: 2rem 2rem;
+  min-height: auto;
+  animation: matrixFadeIn 1s ease-out;
+  position: relative;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-title {
+  color: #00FF00;
+  font-family: monospace;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+  text-align: left;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.skills-grid.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease-out;
+}
+
+.skill-card {
+  background-color: rgba(51, 51, 51, 0.1);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: glitchIn 0.5s ease-out forwards;
+  animation-delay: calc(var(--skill-index) * 0.1s);
+  opacity: 0;
+}
+
+.skill-card:hover {
+  border-color: #00FF00;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+}
+
+.skill-icon {
+  position: relative;
+  background-color: rgba(0, 255, 0, 0.05);
+  color: #00FF00;
+  font-family: monospace;
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #00FF00;
+  min-width: 60px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.icon-text {
+  position: relative;
+  z-index: 1;
+}
+
+.icon-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0, 255, 0, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-card:hover .icon-glow {
+  opacity: 1;
+}
+
+.skill-info {
+  flex: 1;
+}
+
+.skill-name {
+  color: #00FF00;
+  font-family: monospace;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(0, 255, 0, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background-color: #00FF00;
+  width: 0;
+  position: relative;
+  animation: loadProgress 1.5s ease-out forwards;
+  animation-delay: calc(var(--skill-index) * 0.1s + 0.5s);
+}
+
+.progress-glow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.8), transparent);
+  animation: progressGlow 2s linear infinite;
+}
+
+.matrix-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, 
+    transparent 0%,
+    rgba(0, 255, 0, 0.05) 50%,
+    transparent 100%
+  );
+  animation: matrixRain 2s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-card:hover .matrix-rain {
+  opacity: 1;
+}
+
+@keyframes loadProgress {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: calc(var(--progress-value) + 5%);
+  }
+  100% {
+    width: var(--progress-value);
+  }
+}
+
+@keyframes progressGlow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(500%);
+  }
+}
+
+@keyframes glitchIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    clip-path: inset(100% 0 0 0);
+  }
+  20% {
+    clip-path: inset(45% 0 54% 0);
+  }
+  40% {
+    clip-path: inset(74% 0 25% 0);
+  }
+  60% {
+    clip-path: inset(25% 0 74% 0);
+  }
+  80% {
+    clip-path: inset(54% 0 45% 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes matrixFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    text-shadow: 0 0 8px #00FF00;
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(10px);
+    text-shadow: 0 0 15px #00FF00;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 0 0 5px #00FF00;
+  }
+}
+
+@keyframes matrixRain {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+} 

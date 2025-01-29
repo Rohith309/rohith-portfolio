@@ -1,0 +1,57 @@
+.terminal {
+  background-color: #000000;
+  border-radius: 10px;
+  border: 1px solid #333;
+  width: 80%;
+  max-width: 800px;
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+.terminal-header {
+  background-color: #1a1a1a;
+  padding: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+.terminal-content {
+  padding: 20px;
+  position: relative;
+}
+
+.terminal-text {
+  color: #00FF00;
+  font-family: monospace;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 10px 0;
+  white-space: pre-wrap;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1rem;
+  background-color: #00FF00;
+  margin-left: 5px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+} 
