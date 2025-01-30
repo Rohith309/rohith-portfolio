@@ -6,6 +6,10 @@ A modern, matrix-themed portfolio website built with React and Vite.
 
 [View Portfolio](https://rohith-portfolio14.netlify.app/)
 
+## 📸 Screenshot
+
+![Portfolio Screenshot](./assets/image.png)
+
 ## 🛠️ Technologies Used
 
 - React with Vite
