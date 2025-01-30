@@ -10,7 +10,7 @@ const Contact = () => {
   });
 
   useEffect(() => {
-    emailjs.init("YOUR_PUBLIC_KEY"); // Get this from Account > API Keys
+    emailjs.init("TxDUC1nsuF5_QS4wx"); 
   }, []);
 
   const [formData, setFormData] = useState({
@@ -25,6 +25,31 @@ const Contact = () => {
     error: null
   });
 
+  const [successMessage, setSuccessMessage] = useState('');
+  const [showMessage, setShowMessage] = useState(false);
+
+  const animateSuccessMessage = (message) => {
+    setShowMessage(true);
+    let index = 0;
+    const typeSpeed = 50;
+
+    const typeWriter = () => {
+      if (index < message.length) {
+        setSuccessMessage(message.slice(0, index + 1));
+        index++;
+        setTimeout(typeWriter, typeSpeed);
+      } else {
+        // Hide message after 3 seconds
+        setTimeout(() => {
+          setShowMessage(false);
+          setSuccessMessage('');
+        }, 3000);
+      }
+    };
+
+    typeWriter();
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus({ submitting: true, submitted: false, error: null });
@@ -32,22 +57,23 @@ const Contact = () => {
     try {
       await emailjs.send(
         'service_bh23suj',
-        'template_hvcnexm', 
+        'template_hvcnexm',
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
           to_email: 'ggrohith210@gmail.com',
           reply_to: formData.email,
-        }
+        },
+        'TxDUC1nsuF5_QS4wx'
       );
 
       setStatus({ submitting: false, submitted: true, error: null });
       setFormData({ name: '', email: '', message: '' });
-      alert('Message sent successfully!');
+      animateSuccessMessage('[SUCCESS::MESSAGE_SENT]');
     } catch (error) {
       setStatus({ submitting: false, submitted: false, error: error.message });
-      alert('Failed to send message. Please try again.');
+      animateSuccessMessage('[ERROR::MESSAGE_FAILED]');
     }
   };
 
@@ -103,9 +129,15 @@ const Contact = () => {
             {status.submitting ? 'SENDING...' : 'TRANSMIT'}
           </button>
         </form>
+        {showMessage && (
+          <div className="terminal-message">
+            <span className="message-text">{successMessage}</span>
+            <span className="cursor"></span>
+          </div>
+        )}
       </div>
     </section>
   );
 };
 
-export default Contact; 
+export default Contact;

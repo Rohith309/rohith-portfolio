@@ -124,8 +124,53 @@
   color: #ff0000;
 }
 
+.terminal-message {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  color: var(--primary-color);
+  font-family: 'Fira Code', monospace;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.message-text {
+  display: inline-block;
+}
+
+.terminal-message .cursor {
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  background-color: var(--primary-color);
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .contact-container {
     padding: 0 1rem;
   }
-} 
+}

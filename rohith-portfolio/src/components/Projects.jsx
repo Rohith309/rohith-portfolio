@@ -12,7 +12,7 @@ const Projects = () => {
             {
               name: "CAMPUS.LIFE",
               description: "A COMPREHENSIVE DIGITAL ENGAGEMENT APP FOR CAMPUSES, ENHANCING STUDENT INTERACTION AND CAMPUS CONNECTIVITY",
-              tags: ["#ANDROID STUDIO", "#DJANGO", "#JAVA", "#PYTHON", "#JQUERY", "#REST API"]
+              tags: ["#ANDROID STUDIO", "#DJANGO", "#JAVA", "#PYTHON", "#REST API"]
             },
             {
               name: "LINE & LAUGH",

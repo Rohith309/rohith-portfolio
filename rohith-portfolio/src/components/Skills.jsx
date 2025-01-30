@@ -7,8 +7,7 @@ import {
   DiReact, 
   DiDjango, 
   DiAndroid, 
-  DiMysql, 
-  DiJqueryLogo 
+  DiMysql 
 } from 'react-icons/di';
 import { TbApi } from 'react-icons/tb';
 import { BiData } from 'react-icons/bi';
@@ -30,7 +29,6 @@ const Skills = () => {
     { name: 'REST API', icon: <TbApi />, progress: 80 },
     { name: 'MySQL', icon: <DiMysql />, progress: 85 },
     { name: 'SQLite', icon: <BiData />, progress: 80 },
-    { name: 'jQuery', icon: <DiJqueryLogo />, progress: 30 },
   ];
 
   return (

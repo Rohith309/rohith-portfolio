@@ -1,7 +1,6 @@
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
-import profileImage from '../assets/rohith.jpg';
 import '../styles/About.css';
 
 const About = () => {
@@ -46,11 +45,6 @@ const About = () => {
             <a href="https://www.linkedin.com/in/rohith-reddy4" target="_blank" rel="noopener noreferrer" className="social-link">
               <FaLinkedin /> LINKEDIN
             </a>
-          </div>
-        </div>
-        <div className="about-image">
-          <div className="image-container">
-            <img src={profileImage} alt="Profile" />
           </div>
         </div>
       </div>
