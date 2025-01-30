@@ -8,7 +8,7 @@ A modern, matrix-themed portfolio website built with React and Vite.
 
 ## 📸 Screenshot
 
-![Portfolio Screenshot](./assets/image.png)
+![Portfolio Screenshot](\rohith-portfolio\rohith-portfolio\src\assets\image.png)
 
 ## 🛠️ Technologies Used
 
