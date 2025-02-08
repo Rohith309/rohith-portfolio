@@ -16,7 +16,7 @@ const Projects = () => {
             },
             {
               name: "LINE & LAUGH",
-              description: "UNLEASH YOUR CREATIVITY: DRAW, GUESS, AND LAUGH WITH FRIENDS",
+              description: "A FUN, INTERACTIVE DRAWING APP WHERE USERS DRAW, AND OTHERS GUESS. FOSTERING CREATIVITY AND COLLABORATION.",
               tags: ["#PYTHON", "#JAVA", "#ANDROID STUDIO", "#DJANGO"]
             },
             {
